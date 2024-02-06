@@ -1,0 +1,274 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/home.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100&family=Quantico&display=swap" rel="stylesheet">
+    <style>
+    nav{
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5em;
+      }
+      
+      .logo{
+        display: flex;
+      }
+      
+      #charge{
+        color: #FFF;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+      }
+      
+      #it{
+        color: #0D94E5;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+      }
+      
+      .menus{
+        display: flex;
+        gap: 50px;
+      }
+      
+      .navLink h3{
+        color: #CCC;
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: light;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 1.92px;
+        text-decoration: none;
+        transition:0.2s ease-in-out;
+      }
+      
+      .navLink h3:hover{
+        cursor: pointer;
+        color: #ffffff;
+      }
+      
+      .login-btn{
+        padding: 7px 15px;
+        color: #FFF;
+        border-radius: 5px;
+        border: 0px solid;
+        background: linear-gradient(101deg, #0773C8 0%, #14A0FD 100%);
+        box-shadow: 0px 0px 5.5px rgba(109.24, 249.69, 215.98, 0.25);
+        transition: 0.9s;
+      }
+      
+      .login-btn:hover{
+        
+        background: linear-gradient(281deg, #0773C8 0%, #14A0FD 100%);
+      }
+      
+      .login-btn h3{
+        color: white;
+        font-size: 13px;
+        font-family: Poppins;
+        font-weight: 500;
+        letter-spacing: 2.08px;
+        word-wrap: break-word;
+        
+      }
+    
+      .nav-login-link{
+        text-decoration: none;
+    
+      }
+      a{
+        text-decoration: none;
+      }
+
+      /* nav end */
+
+      /* main */
+      .container{
+        background: linear-gradient(180deg, #0f0f0f 0%, #060708 100%);
+        width: 100%;
+        height: 2850px;
+        
+        overflow: hidden;
+      }
+
+
+      /* main end */
+
+      p{
+        border: 0px;
+        margin: 0%;
+        padding: 0%;
+        font-family: 'Poppins';
+        color: white;
+      }
+
+      .container{
+        width: 100%;
+        height: 100%;
+      }
+      
+      .main-contents{
+        /* background-color: #0773C8; */
+        padding: 4em;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+      }
+
+      ul{
+        list-style: none;
+      }
+
+      .heading-left h1{
+        font-family: 'Poppins';
+        font-size: x-large;
+        color: white;
+      }
+      .heading-left h2{
+        font-family: 'Poppins';
+        font-size: large;
+        color: white;
+      }
+
+      .contents{
+        /* background-color: #CCC; */
+        width: 90%;
+        margin: 0px auto;
+      }
+
+      .name{
+        display: flex;
+        /* background-color: #0773C8; */
+        width: 200px;
+        height: 20px;
+        overflow: hidden;
+        
+      }
+      .feedback{
+        font-weight: 200;
+      }
+
+      li{
+        display: flex;
+        padding: 1em;
+        border: 1px solid grey;
+        border-radius: 10px;
+        overflow: hidden;
+      
+      }
+      ul{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+      }
+      .headings{
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .reservation-btn{
+        height: 40px;
+        padding: 7px 15px;
+        color: #FFF;
+        border-radius: 5px;
+        border: 1px solid grey;
+        background-color: #06070800;
+        /* background: linear-gradient(101deg, #0773C8 0%, #14A0FD 100%); */
+        box-shadow: 0px 0px 5.5px rgba(109.24, 249.69, 215.98, 0.25);
+        transition: 0.9s;
+      }
+      .reservation-btn:hover{
+        border: 1px solid #14A0FD 100%;
+        background: linear-gradient(101deg, #0773C8 0%, #14A0FD 100%);
+      }
+      
+      
+    </style>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class='logo'>
+              <h3 id='charge'>CHARGE</h3>
+              <h3 id='it'>IT</h3>
+            </div>
+            <div class='menus'>
+              <a href="{% url 'home' %}" class="navLink">
+                <h3>HOME</h3>
+              </a>
+              <a href="ReservationListView" class="navLink">
+                <h3>STATIONS</h3>
+              </a>
+              <a href="#" class="navLink">
+                <h3>ABOUT</h3>
+              </a>
+              
+             
+            </div>
+            <!-- {% if request.user.is_authenticated %} -->
+                
+                <a href="{% url 'LogoutView' %}">
+                    <form method="post" action="{% url 'LogoutView' %}">
+                        {% csrf_token %}
+                        <button class='login-btn'>LOGOUT</button>
+                    </form>
+                </a>
+            <!-- {% else %} -->
+                <!-- <a href="">
+                    <button class='login-btn'><h3>LOGIN</h3></button>
+                </a>
+            {% endif %} -->
+            
+        </nav>
+        <div class="main-contents">
+          <div class="headings">
+            <div class="heading-left">
+              <h1>{{chargingspot.name}}</h1>
+              <h2>{{chargingspot.place.place}}</h2>
+            </div>
+            <a href="{% url 'PlaceReservationView' chargingspot_id=chargingspot.id %}">
+              <button class="reservation-btn">RESERVE</button>
+            </a>
+            
+          </div>
+          <div class="contents">
+            <p></p>
+            <ul>
+              {% for feedback in feedbacks %}
+                  <li>        
+                      <div class="name">
+                        <p>{{ feedback.user }}</p>
+                      </div>
+                      <div class="feedback">
+                        <p>{{ feedback.comment }}</p>
+                      </div>
+                  </li>
+              {% empty %}
+                  <li>No feedbacks found.</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+       <!-- list_feedbacks.html -->
+
+    </div>
+</body>
+</html>

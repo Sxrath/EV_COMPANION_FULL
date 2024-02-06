@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/reservationdetails.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100&family=Quantico&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            border: 0px;
+            padding: 0%;
+            margin: 0%;
+        }
+        /* nav */
+        nav{
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5em;
+      }
+      
+      .logo{
+        display: flex;
+      }
+      
+      #charge{
+        color: #FFF;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+      }
+      
+      #it{
+        color: #0D94E5;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+      }
+      
+      .menus{
+        display: flex;
+        gap: 50px;
+      }
+      
+      .navLink h3{
+        color: #CCC;
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: light;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 1.92px;
+        text-decoration: none;
+        transition:0.2s ease-in-out;
+      }
+      
+      .navLink h3:hover{
+        cursor: pointer;
+        color: #ffffff;
+      }
+      
+      .login-btn{
+        padding: 7px 15px;
+        color: #FFF;
+        border-radius: 5px;
+        border: 0px solid;
+        background: linear-gradient(101deg, #0773C8 0%, #14A0FD 100%);
+        box-shadow: 0px 0px 5.5px rgba(109.24, 249.69, 215.98, 0.25);
+        transition: 0.9s;
+      }
+      
+      .login-btn:hover{
+        
+        background: linear-gradient(281deg, #0773C8 0%, #14A0FD 100%);
+      }
+      
+      .login-btn h3{
+        color: white;
+        font-size: 13px;
+        font-family: Poppins;
+        font-weight: 500;
+        letter-spacing: 2.08px;
+        word-wrap: break-word;
+        
+      }
+    
+      .nav-login-link{
+        text-decoration: none;
+    
+      }
+      a{
+        text-decoration: none;
+      }
+        /* nav end */
+        /* content */
+
+      .container{
+        background: linear-gradient(180deg, #0f0f0f 0%, #060708 100%);
+        width: 100%;
+        height: 2850px;
+        
+        overflow: hidden;
+
+      }
+      
+      .main-contents{
+        width: 320px;
+        height: 320px;
+        border-radius: 10px;
+        background: rgba(231, 231, 231, 0.041);
+        backdrop-filter: blur(124.19999694824219px);
+        margin: 50px auto;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .main-contents h1{
+        font-family: 'Poppins';
+        color: white;
+        font-size: x-large;
+      }
+
+      .main-contents h2{
+        font-family: 'Poppins';
+        color: white;
+        font-size: medium;
+      }
+      .completed{
+        display: flex;
+        gap: 20px;
+      }
+
+      .completed p{
+        font-family: 'Poppins';
+        color: white;
+        font-size: 14px;
+      }
+
+      .inputs{
+        margin-top: 30px;
+      }
+
+      .feedbackinput{
+        border-radius: 5px;
+        background-color: #06070800;
+        border: 1px solid grey;
+        width: 100%;
+        height: 100px;
+        margin-top: 20px;
+        color: gray;
+      }
+
+      .main-contents button{
+        margin-top: 20px;
+        width: 320px;
+        height: 40px;
+        border-radius: 5px;
+        background: #0D94E5;    
+        color: white;
+        border: 0px;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.2s;
+      }
+
+      .main-contents button:hover{
+        background: #50bcff; 
+      }
+
+
+    </style>
+   
+        
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class='logo'>
+              <h3 id='charge'>CHARGE</h3>
+              <h3 id='it'>IT</h3>
+            </div>
+            <div class='menus'>
+              <a href="{% url 'home' %}" class="navLink">
+                <h3>HOME</h3>
+              </a>
+              <a href="ReservationListView" class="navLink">
+                <h3>STATIONS</h3>
+              </a>
+              <a href="#" class="navLink">
+                <h3>ABOUT</h3>
+              </a>
+              
+             
+            </div>
+            
+                
+                <a href="{% url 'LogoutView' %}">
+                    <form method="post" action="{% url 'LogoutView' %}">
+                        {% csrf_token %}
+                        <button class='login-btn'>LOGOUT</button>
+                    </form>
+                </a>
+           
+            
+        </nav>
+        
+        <div class="main-contents">
+            <form method="post">
+                {% csrf_token %}
+                <h1>{{ reservation.chargingspot.name }}</h1>
+                <h2>{{ reservation.chargingspot.place.place }}</h2>
+                <div class="inputs">
+                    <div class="completed">
+                        <p>Charging Completed</p>
+                        <input type="checkbox" name="complete" id="completeCheckbox" {% if reservation.completed %}checked{% endif %}>
+                    </div>
+                    <input class="feedbackinput" type="text" name="feedback"><br>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+    
+    
+</body>
+</html>

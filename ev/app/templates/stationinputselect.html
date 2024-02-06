@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/stationinput.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100&family=Quantico&display=swap" rel="stylesheet">
+    <title>select station</title>
+    <style>
+        /* Style the select box */
+        select {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #525252;
+            border-radius: 4px;
+            background-color: #cccccc00;
+            height: 40px;
+            color: white;
+            margin-top: 35px;
+        }
+
+        /* Style the options within the select box */
+        option {
+            background-color: #9c9c9c;
+            color: #303030;
+            font-size: 12px;
+            font-family: 'Poppins';
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class='login-container'>
+        
+        <div class='login-content'>
+            <svg id='svg2' xmlns="http://www.w3.org/2000/svg" width="367" height="454" viewBox="0 0 367 454" fill="none">
+                <g filter="url(#filter0_f_153_241)">
+                    <path d="M294.435 591.888C239.964 561.193 201.091 516.467 184.44 465.329C167.789 414.191 174.39 359.806 203.119 311.44C231.847 263.074 280.926 223.72 341.992 200.083C403.058 176.446 472.333 169.989 538.013 181.811C603.694 193.634 661.717 223.006 702.194 264.921C742.672 306.836 763.101 358.702 760 411.681C756.898 464.66 730.459 515.474 685.187 555.466C639.914 595.457 578.61 622.151 511.719 631L467.876 405.127L294.435 591.888Z" fill="url(#paint0_linear_153_241)"/>
+                </g>
+                <defs>
+                    <filter id="filter0_f_153_241" x="0.344818" y="0.938812" width="935.062" height="805.161" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="87.55" result="effect1_foregroundBlur_153_241"/>
+                    </filter>
+                    <linearGradient id="paint0_linear_153_241" x1="544.635" y1="-459.139" x2="252" y2="-726" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#0DE5BE"/>
+                    <stop offset="1" stop-color="#0D49E5"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <svg id='svg1' xmlns="http://www.w3.org/2000/svg" width="367" height="454" viewBox="0 0 367 454" fill="none">
+                <g filter="url(#filter0_f_153_241)">
+                    <path d="M294.435 591.888C239.964 561.193 201.091 516.467 184.44 465.329C167.789 414.191 174.39 359.806 203.119 311.44C231.847 263.074 280.926 223.72 341.992 200.083C403.058 176.446 472.333 169.989 538.013 181.811C603.694 193.634 661.717 223.006 702.194 264.921C742.672 306.836 763.101 358.702 760 411.681C756.898 464.66 730.459 515.474 685.187 555.466C639.914 595.457 578.61 622.151 511.719 631L467.876 405.127L294.435 591.888Z" fill="url(#paint0_linear_153_241)"/>
+                </g>
+                <defs>
+                    <filter id="filter0_f_153_241" x="0.344818" y="0.938812" width="935.062" height="805.161" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="87.55" result="effect1_foregroundBlur_153_241"/>
+                    </filter>
+                    <linearGradient id="paint0_linear_153_241" x1="544.635" y1="-459.139" x2="252" y2="-726" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#0DE5BE"/>
+                    <stop offset="1" stop-color="#0D49E5"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <svg id='svg3' xmlns="http://www.w3.org/2000/svg" width="367" height="454" viewBox="0 0 367 454" fill="none">
+                <g filter="url(#filter0_f_153_241)">
+                    <path d="M294.435 591.888C239.964 561.193 201.091 516.467 184.44 465.329C167.789 414.191 174.39 359.806 203.119 311.44C231.847 263.074 280.926 223.72 341.992 200.083C403.058 176.446 472.333 169.989 538.013 181.811C603.694 193.634 661.717 223.006 702.194 264.921C742.672 306.836 763.101 358.702 760 411.681C756.898 464.66 730.459 515.474 685.187 555.466C639.914 595.457 578.61 622.151 511.719 631L467.876 405.127L294.435 591.888Z" fill="url(#paint0_linear_153_241)"/>
+                </g>
+                <defs>
+                    <filter id="filter0_f_153_241" x="0.344818" y="0.938812" width="935.062" height="805.161" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="87.55" result="effect1_foregroundBlur_153_241"/>
+                    </filter>
+                    <linearGradient id="paint0_linear_153_241" x1="544.635" y1="-459.139" x2="252" y2="-726" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#0DE5BE"/>
+                    <stop offset="1" stop-color="#0D49E5"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <svg id='svg4' xmlns="http://www.w3.org/2000/svg" width="367" height="454" viewBox="0 0 367 454" fill="none">
+                <g filter="url(#filter0_f_153_241)">
+                    <path d="M294.435 591.888C239.964 561.193 201.091 516.467 184.44 465.329C167.789 414.191 174.39 359.806 203.119 311.44C231.847 263.074 280.926 223.72 341.992 200.083C403.058 176.446 472.333 169.989 538.013 181.811C603.694 193.634 661.717 223.006 702.194 264.921C742.672 306.836 763.101 358.702 760 411.681C756.898 464.66 730.459 515.474 685.187 555.466C639.914 595.457 578.61 622.151 511.719 631L467.876 405.127L294.435 591.888Z" fill="url(#paint0_linear_153_241)"/>
+                </g>
+                <defs>
+                    <filter id="filter0_f_153_241" x="0.344818" y="0.938812" width="935.062" height="805.161" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="87.55" result="effect1_foregroundBlur_153_241"/>
+                    </filter>
+                    <linearGradient id="paint0_linear_153_241" x1="544.635" y1="-459.139" x2="252" y2="-726" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#0DE5BE"/>
+                    <stop offset="1" stop-color="#0D49E5"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="input-content">
+                <form method="post">
+                    {% csrf_token %}
+                    <label for="place_name" class="selectplace">Select Place</label>
+                    <select id="place_name" name="place_name">
+                        <option  value="">Select a place</option>
+                        {% for location in locations %}
+                            <option value="{{ location.id }}">{{ location.place }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            
+            
+            
+            <div class="signin-link">
+                <a href="{% url 'home'%}" class="Regiser-signin-link">
+                    <p id='navlogin-login'>Home</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
